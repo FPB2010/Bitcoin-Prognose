@@ -112,3 +112,5 @@ const RecommendationCard: React.FC<RecommendationCardProps> = ({ recommendation 
     </div>
   );
 };
+
+export default RecommendationCard
