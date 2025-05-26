@@ -105,3 +105,5 @@ const PriceDisplay: React.FC<PriceDisplayProps> = ({ currentPrice, loading, erro
     </div>
   );
 };
+
+export default PriceDisplay
