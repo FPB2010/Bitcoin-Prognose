@@ -27,13 +27,8 @@ export const formatDateTime = (timestamp: string | number, locale: string = 'en'
   const date = typeof timestamp === 'number' ? new Date(timestamp) : new Date(timestamp);
   
   return new Intl.DateTimeFormat(locale, {
-    year: 'numeric',
-    month: 'short',
-    day: '2-digit',
-    hour: '2-digit',
-    minute: '2-digit',
-    second: '2-digit',
-    hour12: false,
+    dateStyle: 'medium',
+    timeStyle: 'medium',
   }).format(date);
 };
 
@@ -41,27 +36,30 @@ export const formatChartDate = (timestamp: number, timeframe: number, locale: st
   const date = new Date(timestamp);
   
   if (timeframe === 1) {
+    // For 24h view, show hours and minutes
     return new Intl.DateTimeFormat(locale, {
-      hour: '2-digit',
-      minute: '2-digit',
-      hour12: false,
+      hour: 'numeric',
+      minute: 'numeric',
+      timeZoneName: 'short'
     }).format(date);
   } else if (timeframe <= 7) {
+    // For weekly view, show day and time
     return new Intl.DateTimeFormat(locale, {
       weekday: 'short',
-      hour: '2-digit',
-      minute: '2-digit',
-      hour12: false,
+      hour: 'numeric',
+      minute: 'numeric'
     }).format(date);
   } else if (timeframe <= 90) {
+    // For monthly view, show date
     return new Intl.DateTimeFormat(locale, {
       month: 'short',
-      day: '2-digit',
+      day: 'numeric'
     }).format(date);
   } else {
+    // For yearly view, show month and year
     return new Intl.DateTimeFormat(locale, {
       year: 'numeric',
-      month: 'short',
+      month: 'short'
     }).format(date);
   }
 };
