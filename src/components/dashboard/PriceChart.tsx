@@ -166,3 +166,5 @@ const PriceChart: React.FC<PriceChartProps> = ({ historicalData, timeframe }) =>
     </div>
   );
 };
+
+export default PriceChart
