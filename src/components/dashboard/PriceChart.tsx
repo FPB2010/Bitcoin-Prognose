@@ -11,9 +11,10 @@ import {
   Legend,
   Filler,
 } from 'chart.js';
-import { format } from 'date-fns';
 import { HistoricalData } from '../../types';
 import { useTheme } from '../../context/ThemeContext';
+import { formatChartDate, formatCurrency } from '../../utils/formatters';
+import { useTranslation } from 'react-i18next';
 
 ChartJS.register(
   CategoryScale,
@@ -33,6 +34,7 @@ interface PriceChartProps {
 
 const PriceChart: React.FC<PriceChartProps> = ({ historicalData, timeframe }) => {
   const { theme } = useTheme();
+  const { i18n } = useTranslation();
   const [chartData, setChartData] = useState({
     labels: [] as string[],
     datasets: [
@@ -53,18 +55,9 @@ const PriceChart: React.FC<PriceChartProps> = ({ historicalData, timeframe }) =>
   useEffect(() => {
     if (historicalData.length === 0) return;
 
-    const labels = historicalData.map((data) => {
-      const date = new Date(data.timestamp);
-      if (timeframe === 1) {
-        return format(date, 'HH:mm');
-      } else if (timeframe <= 7) {
-        return format(date, 'EEE HH:mm');
-      } else if (timeframe <= 90) {
-        return format(date, 'MMM dd');
-      } else {
-        return format(date, 'MMM yyyy');
-      }
-    });
+    const labels = historicalData.map((data) => 
+      formatChartDate(data.timestamp, timeframe, i18n.language)
+    );
 
     const prices = historicalData.map((data) => data.price);
 
@@ -81,7 +74,7 @@ const PriceChart: React.FC<PriceChartProps> = ({ historicalData, timeframe }) =>
         },
       ],
     });
-  }, [historicalData, timeframe, theme]);
+  }, [historicalData, timeframe, theme, i18n.language]);
 
   const options = {
     responsive: true,
@@ -113,11 +106,7 @@ const PriceChart: React.FC<PriceChartProps> = ({ historicalData, timeframe }) =>
               label += ': ';
             }
             if (context.parsed.y !== null) {
-              label += new Intl.NumberFormat('en-US', {
-                style: 'currency',
-                currency: 'USD',
-                minimumFractionDigits: 2,
-              }).format(context.parsed.y);
+              label += formatCurrency(context.parsed.y);
             }
             return label;
           }
@@ -147,12 +136,7 @@ const PriceChart: React.FC<PriceChartProps> = ({ historicalData, timeframe }) =>
         ticks: {
           color: theme === 'dark' ? '#a3a3a3' : '#737373',
           callback: function(value: any) {
-            return new Intl.NumberFormat('en-US', {
-              style: 'currency',
-              currency: 'USD',
-              minimumFractionDigits: 0,
-              maximumFractionDigits: 0,
-            }).format(value);
+            return formatCurrency(value, true);
           },
         },
       },
@@ -182,5 +166,3 @@ const PriceChart: React.FC<PriceChartProps> = ({ historicalData, timeframe }) =>
     </div>
   );
 };
-
-export default PriceChart;

@@ -1,12 +1,16 @@
 import React from 'react';
 import { AlertTriangle, Check, Gauge, Loader, XCircle } from 'lucide-react';
 import { PriceRecommendation } from '../../types';
+import { formatDateTime } from '../../utils/formatters';
+import { useTranslation } from 'react-i18next';
 
 interface RecommendationCardProps {
   recommendation: PriceRecommendation | null;
 }
 
 const RecommendationCard: React.FC<RecommendationCardProps> = ({ recommendation }) => {
+  const { i18n } = useTranslation();
+
   if (!recommendation) {
     return (
       <div className="bg-white dark:bg-neutral-800 rounded-xl shadow-md overflow-hidden transition-all duration-300 transform hover:shadow-lg p-6">
@@ -102,11 +106,9 @@ const RecommendationCard: React.FC<RecommendationCardProps> = ({ recommendation 
         </div>
         
         <div className="text-xs text-neutral-500 dark:text-neutral-500 pt-2">
-          Last updated: {new Date(recommendation.timestamp).toLocaleString()}
+          Last updated: {formatDateTime(recommendation.timestamp, i18n.language)}
         </div>
       </div>
     </div>
   );
 };
-
-export default RecommendationCard;

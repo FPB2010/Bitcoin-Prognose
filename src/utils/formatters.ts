@@ -22,3 +22,46 @@ export const formatPercentage = (value: number): string => {
     signDisplay: 'exceptZero',
   }).format(value / 100);
 };
+
+export const formatDateTime = (timestamp: string | number, locale: string = 'en'): string => {
+  const date = typeof timestamp === 'number' ? new Date(timestamp) : new Date(timestamp);
+  
+  return new Intl.DateTimeFormat(locale, {
+    year: 'numeric',
+    month: 'short',
+    day: '2-digit',
+    hour: '2-digit',
+    minute: '2-digit',
+    second: '2-digit',
+    hour12: false,
+  }).format(date);
+};
+
+export const formatChartDate = (timestamp: number, timeframe: number, locale: string = 'en'): string => {
+  const date = new Date(timestamp);
+  
+  if (timeframe === 1) {
+    return new Intl.DateTimeFormat(locale, {
+      hour: '2-digit',
+      minute: '2-digit',
+      hour12: false,
+    }).format(date);
+  } else if (timeframe <= 7) {
+    return new Intl.DateTimeFormat(locale, {
+      weekday: 'short',
+      hour: '2-digit',
+      minute: '2-digit',
+      hour12: false,
+    }).format(date);
+  } else if (timeframe <= 90) {
+    return new Intl.DateTimeFormat(locale, {
+      month: 'short',
+      day: '2-digit',
+    }).format(date);
+  } else {
+    return new Intl.DateTimeFormat(locale, {
+      year: 'numeric',
+      month: 'short',
+    }).format(date);
+  }
+};

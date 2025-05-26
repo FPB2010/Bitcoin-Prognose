@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { ArrowDown, ArrowUp, DollarSign, Loader } from 'lucide-react';
 import { BitcoinData } from '../../types';
-import { formatCurrency, formatPercentage } from '../../utils/formatters';
+import { formatCurrency, formatPercentage, formatDateTime } from '../../utils/formatters';
+import { useTranslation } from 'react-i18next';
 
 interface PriceDisplayProps {
   currentPrice: BitcoinData | null;
@@ -12,6 +13,7 @@ interface PriceDisplayProps {
 const PriceDisplay: React.FC<PriceDisplayProps> = ({ currentPrice, loading, error }) => {
   const [priceChanged, setPriceChanged] = useState(false);
   const [previousPrice, setPreviousPrice] = useState<number | null>(null);
+  const { i18n } = useTranslation();
 
   useEffect(() => {
     if (currentPrice && previousPrice && currentPrice.current_price !== previousPrice) {
@@ -91,7 +93,7 @@ const PriceDisplay: React.FC<PriceDisplayProps> = ({ currentPrice, loading, erro
             </div>
             
             <div className="text-xs text-neutral-500 dark:text-neutral-500 pt-2">
-              Last updated: {new Date(currentPrice.last_updated).toLocaleString()}
+              Last updated: {formatDateTime(currentPrice.last_updated, i18n.language)}
             </div>
           </div>
         ) : (
@@ -103,5 +105,3 @@ const PriceDisplay: React.FC<PriceDisplayProps> = ({ currentPrice, loading, erro
     </div>
   );
 };
-
-export default PriceDisplay;
