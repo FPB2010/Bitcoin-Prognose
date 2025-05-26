@@ -1,0 +1,57 @@
+{
+  "header": {
+    "title": "ビットコイントラッカー",
+    "theme": {
+      "light": "ライトモードに切り替え",
+      "dark": "ダークモードに切り替え"
+    }
+  },
+  "price": {
+    "current": "現在価格",
+    "loading": "価格データを読み込み中...",
+    "error": "価格の読み込みエラー",
+    "high24h": "24時間高値",
+    "low24h": "24時間安値",
+    "marketCap": "時価総額",
+    "volume": "取引高（24時間）",
+    "lastUpdated": "最終更新"
+  },
+  "recommendation": {
+    "title": "取引推奨",
+    "analyzing": "市場データを分析中...",
+    "confidence": "信頼度",
+    "buy": "今すぐ購入",
+    "sell": "今すぐ売却",
+    "hold": "ポジション保持"
+  },
+  "timeframe": {
+    "title": "期間",
+    "24h": "24時間",
+    "7d": "7日",
+    "1m": "1ヶ月",
+    "3m": "3ヶ月",
+    "1y": "1年"
+  },
+  "chart": {
+    "title": "価格チャート",
+    "loading": "チャートデータを読み込み中..."
+  },
+  "indicators": {
+    "title": "テクニカル指標",
+    "calculating": "指標を計算中...",
+    "rsi": "RSI",
+    "macd": "MACD",
+    "ma": "移動平均線",
+    "trend": "市場トレンド",
+    "status": {
+      "overbought": "買われ過ぎ",
+      "oversold": "売られ過ぎ",
+      "neutral": "中立",
+      "bullish": "強気",
+      "bearish": "弱気"
+    }
+  },
+  "footer": {
+    "disclaimer": "免責事項：取引推奨は情報提供のみを目的としています。投資判断を行う前に、必ずご自身で調査を行ってください。"
+  }
+}

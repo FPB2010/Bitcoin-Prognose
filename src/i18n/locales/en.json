@@ -1,0 +1,57 @@
+{
+  "header": {
+    "title": "Bitcoin Tracker",
+    "theme": {
+      "light": "Switch to light mode",
+      "dark": "Switch to dark mode"
+    }
+  },
+  "price": {
+    "current": "Current Price",
+    "loading": "Loading price data...",
+    "error": "Error Loading Price",
+    "high24h": "24h High",
+    "low24h": "24h Low",
+    "marketCap": "Market Cap",
+    "volume": "Volume (24h)",
+    "lastUpdated": "Last updated"
+  },
+  "recommendation": {
+    "title": "Trading Recommendation",
+    "analyzing": "Analyzing market data...",
+    "confidence": "Confidence",
+    "buy": "Buy Now",
+    "sell": "Sell Now",
+    "hold": "Hold Position"
+  },
+  "timeframe": {
+    "title": "Time Frame",
+    "24h": "24H",
+    "7d": "7D",
+    "1m": "1M",
+    "3m": "3M",
+    "1y": "1Y"
+  },
+  "chart": {
+    "title": "Price Chart",
+    "loading": "Loading chart data..."
+  },
+  "indicators": {
+    "title": "Technical Indicators",
+    "calculating": "Calculating indicators...",
+    "rsi": "RSI",
+    "macd": "MACD",
+    "ma": "Moving Averages",
+    "trend": "Market Trend",
+    "status": {
+      "overbought": "Overbought",
+      "oversold": "Oversold",
+      "neutral": "Neutral",
+      "bullish": "Bullish",
+      "bearish": "Bearish"
+    }
+  },
+  "footer": {
+    "disclaimer": "Disclaimer: Trading recommendations are for informational purposes only. Always do your own research before making investment decisions."
+  }
+}

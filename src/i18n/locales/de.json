@@ -1,0 +1,57 @@
+{
+  "header": {
+    "title": "Bitcoin-Tracker",
+    "theme": {
+      "light": "Zum hellen Modus wechseln",
+      "dark": "Zum dunklen Modus wechseln"
+    }
+  },
+  "price": {
+    "current": "Aktueller Preis",
+    "loading": "Lade Preisdaten...",
+    "error": "Fehler beim Laden der Preise",
+    "high24h": "24h Höchst",
+    "low24h": "24h Tief",
+    "marketCap": "Marktkapitalisierung",
+    "volume": "Volumen (24h)",
+    "lastUpdated": "Zuletzt aktualisiert"
+  },
+  "recommendation": {
+    "title": "Handelsempfehlung",
+    "analyzing": "Analysiere Marktdaten...",
+    "confidence": "Konfidenz",
+    "buy": "Jetzt Kaufen",
+    "sell": "Jetzt Verkaufen",
+    "hold": "Position Halten"
+  },
+  "timeframe": {
+    "title": "Zeitrahmen",
+    "24h": "24H",
+    "7d": "7T",
+    "1m": "1M",
+    "3m": "3M",
+    "1y": "1J"
+  },
+  "chart": {
+    "title": "Preisverlauf",
+    "loading": "Lade Chartdaten..."
+  },
+  "indicators": {
+    "title": "Technische Indikatoren",
+    "calculating": "Berechne Indikatoren...",
+    "rsi": "RSI",
+    "macd": "MACD",
+    "ma": "Gleitende Durchschnitte",
+    "trend": "Markttrend",
+    "status": {
+      "overbought": "Überkauft",
+      "oversold": "Überverkauft",
+      "neutral": "Neutral",
+      "bullish": "Bullisch",
+      "bearish": "Bärisch"
+    }
+  },
+  "footer": {
+    "disclaimer": "Haftungsausschluss: Handelsempfehlungen dienen nur zu Informationszwecken. Führen Sie immer Ihre eigene Recherche durch, bevor Sie Anlageentscheidungen treffen."
+  }
+}

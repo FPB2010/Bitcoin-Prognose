@@ -1,0 +1,57 @@
+{
+  "header": {
+    "title": "Rastreador de Bitcoin",
+    "theme": {
+      "light": "Cambiar a modo claro",
+      "dark": "Cambiar a modo oscuro"
+    }
+  },
+  "price": {
+    "current": "Precio Actual",
+    "loading": "Cargando datos de precio...",
+    "error": "Error al cargar el precio",
+    "high24h": "Máximo 24h",
+    "low24h": "Mínimo 24h",
+    "marketCap": "Capitalización de Mercado",
+    "volume": "Volumen (24h)",
+    "lastUpdated": "Última actualización"
+  },
+  "recommendation": {
+    "title": "Recomendación de Trading",
+    "analyzing": "Analizando datos del mercado...",
+    "confidence": "Confianza",
+    "buy": "Comprar Ahora",
+    "sell": "Vender Ahora",
+    "hold": "Mantener Posición"
+  },
+  "timeframe": {
+    "title": "Marco Temporal",
+    "24h": "24H",
+    "7d": "7D",
+    "1m": "1M",
+    "3m": "3M",
+    "1y": "1A"
+  },
+  "chart": {
+    "title": "Gráfico de Precios",
+    "loading": "Cargando datos del gráfico..."
+  },
+  "indicators": {
+    "title": "Indicadores Técnicos",
+    "calculating": "Calculando indicadores...",
+    "rsi": "RSI",
+    "macd": "MACD",
+    "ma": "Medias Móviles",
+    "trend": "Tendencia del Mercado",
+    "status": {
+      "overbought": "Sobrecomprado",
+      "oversold": "Sobrevendido",
+      "neutral": "Neutral",
+      "bullish": "Alcista",
+      "bearish": "Bajista"
+    }
+  },
+  "footer": {
+    "disclaimer": "Aviso: Las recomendaciones de trading son solo para fines informativos. Siempre realice su propia investigación antes de tomar decisiones de inversión."
+  }
+}
